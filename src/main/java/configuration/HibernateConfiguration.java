@@ -15,10 +15,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import service.UserService;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "com.websystique.springsecurity.configuration" })
+@ComponentScan(basePackageClasses={UserService.class})
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 
