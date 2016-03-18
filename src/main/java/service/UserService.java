@@ -7,7 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
  */
 public interface UserService {
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER')")
     void addUser();
     @PreAuthorize("hasRole('USER')")
     int getUserId();
