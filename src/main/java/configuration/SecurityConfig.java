@@ -1,9 +1,11 @@
 package configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import service.UserService;
 
 /**
  * springSecurity
@@ -11,8 +13,9 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
  */
 
 @Configuration
-@EnableGlobalMethodSecurity(securedEnabled=true)
-public class SecurityConfig{
+@EnableGlobalMethodSecurity(prePostEnabled=true)
+@ComponentScan(basePackageClasses={UserService.class})
+public class SecurityConfig {
 
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
