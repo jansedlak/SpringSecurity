@@ -1,5 +1,6 @@
 package service;
 
+import model.User;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,12 +8,14 @@ import org.springframework.stereotype.Service;
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {
-    public void addUser() {
-        System.out.println("User was added.");
+
+
+    public User findById(int id) {
+        return null;
     }
 
-    public int getUserId() {
-        System.out.println("Id 1 returned.");
-        return 1;
+    public User findBySso(String sso) {
+        return null;
     }
 }
+
